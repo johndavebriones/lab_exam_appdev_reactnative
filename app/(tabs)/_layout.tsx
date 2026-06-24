@@ -2,7 +2,7 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 
 import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
+import {Ionicons } from "@expo/vector-icons";
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
@@ -15,19 +15,20 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarStyle: { backgroundColor: '#F8FCFC'},
       }}>
       <Tabs.Screen
-        name="index"
+        name="LabExam1"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Lab Exam 1', tabBarActiveTintColor: "#000000",
+          tabBarIcon: ({ color }) => <Ionicons name="document-text-outline" size={24} color= "#000000"/>
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="LabExam2"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Lab Exam 2', tabBarActiveTintColor: "#000000",
+          tabBarIcon: ({ color }) =>  <Ionicons name="document-text-outline" size={24} color= "#000000"/>,
         }}
       />
     </Tabs>
